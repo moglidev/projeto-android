@@ -3,7 +3,10 @@
     font-family: 'iDroid';
     src: url('../fontes/idroid.otf') format('opentype');
 }
-
+@font-face{
+    font-family: 'Oswald';
+    src: url('../fontes/Oswald-Light.ttf') format('truetype');
+}
 :root{
     --corUm: #2AC501;
     --corDois: #289D09;
@@ -12,6 +15,7 @@
 
     --fontePadrão: Arial, Verdana, Helvetica, Sans-serif;
     --fonteAndroid: 'iDroid', Monospace;
+    --fonteTitulo: 'Oswald', sans-serif;
 }
 
 *{
@@ -32,19 +36,25 @@ p{
 
 header{
     color: white;
-    background-image: linear-gradient(to bottom, var(--corDois), var(--corTrês));
+    background-image: linear-gradient(to bottom, var(--corDois), var(--corQuatro));
     text-align: center;
     min-height: 150px;
 }
 
 header h1{
     padding: 22px 0px;
+    font-size: 42px;
+    font-family: var(--fonteTitulo);
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.644);
 }
 
 header p{
     max-width: 400px;
     margin: auto;
-    padding-bottom: 35px;
+    padding-bottom: 40px;
+    text-indent: 0px;
+    text-align: center;
+    font-family: var(--fonteTitulo);
 }
 
 nav{
@@ -60,7 +70,7 @@ nav > a{
     font-size: 13px;
     padding: 10px;
     border-radius: 6px;
-    transition-duration: 0.3s;
+    transition-duration: 0.5s;
 }
 
 nav > a:hover{
@@ -84,13 +94,13 @@ article{
 
 article > h1{
     font-family: var(--fonteAndroid);
-    color: var(--corDois);
+    color: var(--corTrês);
     font-size: 25px;
 }
 
 article > h2{
     font-family: var(--fonteAndroid);
-    color: var(--corUm);
+    color: var(--corDois);
     font-size: 20px;
     background-image: linear-gradient(to right, rgb(178, 226, 178), transparent);
     text-indent: 15px;
@@ -117,10 +127,24 @@ article > div{
     margin-left: 0px;
 }
 
+.links{
+    text-decoration: none;
+    color: var(--corTrês);
+}
+.links::after{
+    content: '\1F517'
+}
+.links:hover{
+    border-radius: 4px;
+    padding: 2px 2px;
+    text-decoration: underline;
+    background-color: var(--corUm);
+}
+
 div > iframe{
     display: block;
     max-height: 300px;
-    width: 90%;
+    width: 95%;
     margin: auto;
 }
 
@@ -166,4 +190,16 @@ footer{
 footer > p{
     padding: 6px;
     text-align: center;
+}
+
+#perfil{
+    text-decoration: none;
+    color: white;
+    transition-duration: 0.5s;
+}
+
+#perfil:hover{
+    background-color: var(--corDois);
+    padding: 3px;
+    border-radius: 3px;
 }
